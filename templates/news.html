@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+#workitem {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#workitem td, #workitem th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#workitem2 td,  {
+  padding: 20px;
+}
+
+#workitem1 td,  {
+  padding: 8px;
+}
+
+#workitem3 td,  {
+  padding: 30px;
+}
+
+#workitem tr:nth-child(even){background-color: #f2f2f2;}
+
+#workitem tr:hover {background-color: #ddd;}
+
+#workitem th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+    <title>Новости</title>
+</head>
+
+<body>
+    
+    <table id="workitem">
+    <caption>Work Item List</caption>
+    <tr>
+        <th>Work Item Title</th>
+        <th>Assigned</th>
+        <th>dayofweek</th>
+        <th>tymeofwork</th>
+    </tr>
+    {% for item in news['workitems'] %}
+        <tr>
+        <td> {{item["workitemtitle"]}} </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+        {% for itemlevel2 in item['workitems'] %}
+            <tr>
+            <td> --------{{itemlevel2["workitemtitle"]}} </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            {% for task in itemlevel2['workitems'] %}
+                <tr>
+                <td> ---------------{{task["workitemtitle"]}} </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                {% for asign in task['timespends'] %}
+                    <tr>
+                    <td></td>
+                    <td> {{asign["user"]}} </td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
+</table>
+</body>
+</html>
