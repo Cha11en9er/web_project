@@ -17,18 +17,6 @@
   padding: 8px;
 }
 
-#workitem2 td,  {
-  padding: 20px;
-}
-
-#workitem1 td,  {
-  padding: 8px;
-}
-
-#workitem3 td,  {
-  padding: 30px;
-}
-
 #workitem tr:nth-child(even){background-color: #f2f2f2;}
 
 #workitem tr:hover {background-color: #ddd;}
@@ -41,22 +29,31 @@
   color: white;
 }
 </style>
-    <title>Новости</title>
+    <title>WorkItemSpendTime</title>
 </head>
 
 <body>
     
     <table id="workitem">
-    <caption>Work Item List</caption>
     <tr>
         <th>Work Item Title</th>
         <th>Assigned</th>
-        <th>dayofweek</th>
-        <th>tymeofwork</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
     </tr>
     {% for item in news['workitems'] %}
         <tr>
         <td> {{item["workitemtitle"]}} </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -67,10 +64,20 @@
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             </tr>
             {% for task in itemlevel2['workitems'] %}
                 <tr>
                 <td> ---------------{{task["workitemtitle"]}} </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -79,9 +86,55 @@
                     <tr>
                     <td></td>
                     <td> {{asign["user"]}} </td>
-                    <td></td>
-                    <td></td>
-                    </tr>
+                    <td>
+                      {% for log in asign['timelog'] %}
+                        {% if log['dayofweek'] == 'monday'  %}
+                           {{log['timespend']}} 
+                        {% endif %}
+                      {% endfor %}
+                    </td>
+                    <td>
+                      {% for log in asign['timelog'] %}
+                        {% if log['dayofweek'] == 'tuesday'  %}
+                           {{log['timespend']}} 
+                        {% endif %}
+                      {% endfor %}
+                    </td>         
+                    <td>
+                      {% for log in asign['timelog'] %}
+                        {% if log['dayofweek'] == 'wednesday'  %}
+                           {{log['timespend']}} 
+                        {% endif %}
+                      {% endfor %}
+                    </td>    
+                    <td>
+                      {% for log in asign['timelog'] %}
+                        {% if log['dayofweek'] == 'thursday'  %}
+                           {{log['timespend']}} 
+                        {% endif %}
+                      {% endfor %}
+                    </td>   
+                    <td>
+                      {% for log in asign['timelog'] %}
+                        {% if log['dayofweek'] == 'friday'  %}
+                           {{log['timespend']}} 
+                        {% endif %}
+                      {% endfor %}
+                    </td>      
+                    <td>
+                      {% for log in asign['timelog'] %}
+                        {% if log['dayofweek'] == 'saturday'  %}
+                           {{log['timespend']}} 
+                        {% endif %}
+                      {% endfor %}
+                    </td>
+                    <td>
+                      {% for log in asign['timelog'] %}
+                        {% if log['dayofweek'] == 'sunday'  %}
+                           {{log['timespend']}} 
+                        {% endif %}
+                      {% endfor %}
+                    </td>
                 {% endfor %}
             {% endfor %}
         {% endfor %}

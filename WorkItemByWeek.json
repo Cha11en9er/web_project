@@ -15,34 +15,80 @@
                         "workitemlevel": "3",
                         "workitemtitle": "MDS.UK: investigate the reason of the issue",
                         "timespends": [
-                            {
+                          {
+                            "user": "Jonh Queue",
+                            "timelog": [
+                              {
                                 "dayofweek": "monday",
-                                "timespend": "3",
-                                "user": "Jonh Queue"
+                                "timespend": "3"
                               },
                               {
                                 "dayofweek": "tuesday",
-                                "timespend": "3",
-                                "user": "Jonh Queue"
+                                "timespend": "3"
                               },
                               {
-                                "dayofweek": "tuesday",
-                                "timespend": "3",
-                                "user": "Andrey"
-                              }
-                         ]
+                                "dayofweek": "wednesday",
+                                "timespend": "6"
+                              },
+                              {
+                              "dayofweek": "thursday",
+                              "timespend": "1"
+                            },
+                            {
+                              "dayofweek": "friday",
+                              "timespend": "2"
+                            },
+                            {
+                              "dayofweek": "saturday",
+                              "timespend": "4"
+                            },
+                            {
+                              "dayofweek": "sunday",
+                              "timespend": "3.5"
+                            }
+                              ]
+                          }
+                        ]
                     },
                     {
                         "workitemid": "Task 10000",
                         "workitemlevel": "3",
                         "workitemtitle": "MDS.UK: prepare fix for production",
                         "timespends": [
-                            {
+                          {
+                            "user": "Andrey",
+                            "timelog": [
+                              {
                                 "dayofweek": "monday",
-                                "timespend": "2",
-                                "user": "Jonh Queue"
-                              }
-                         ]
+                                "timespend": "5"
+                              },
+                              {
+                                "dayofweek": "tuesday",
+                                "timespend": "3.3"
+                              },
+                              {
+                                "dayofweek": "wednesday",
+                                "timespend": "2.5"
+                              },
+                              {
+                              "dayofweek": "thursday",
+                              "timespend": "2.4"
+                            },
+                            {
+                              "dayofweek": "friday",
+                              "timespend": "7.2"
+                            },
+                            {
+                              "dayofweek": "saturday",
+                              "timespend": "1.4"
+                            },
+                            {
+                              "dayofweek": "sunday",
+                              "timespend": "3.5"
+                            }
+                            ]
+                          }
+                        ]
                     }
                 ]
               }
